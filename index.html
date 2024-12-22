@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webmasters small projects</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Prompt JSON Config Builder</title>
+  <script src="app.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-md rounded p-6 w-full max-w-2xl">
+    <h1 class="text-2xl font-bold mb-4">System Prompt JSON Config Builder</h1>
+
+    <!-- Form Section -->
+    <form id="configForm" class="space-y-6">
+      <!-- Tone Settings -->
+      <div>
+        <h2 class="font-semibold mb-2">Tone</h2>
+        <div class="space-y-2">
+          <label><input type="checkbox" id="toneFormal"> Formal</label>
+          <label><input type="checkbox" id="toneCasual" checked> Casual</label>
+          <label><input type="checkbox" id="toneEmotional" checked> Emotional</label>
+        </div>
+      </div>
+
+      <!-- Depth Settings -->
+      <div>
+        <h2 class="font-semibold mb-2">Depth</h2>
+        <div class="space-y-2">
+          <label><input type="checkbox" id="depthPhilosophical" checked> Philosophical</label>
+          <label><input type="checkbox" id="depthTechnical"> Technical</label>
+          <label><input type="checkbox" id="depthBalanced" checked> Balanced</label>
+        </div>
+      </div>
+
+      <!-- Response Style -->
+      <div>
+        <h2 class="font-semibold mb-2">Response Style</h2>
+        <label>
+          Conciseness:
+          <select id="conciseness" class="w-full border-gray-300 rounded">
+            <option value="short">Short</option>
+            <option value="moderate" selected>Moderate</option>
+            <option value="detailed">Detailed</option>
+          </select>
+        </label>
+        <label>
+          Creativity:
+          <select id="creativity" class="w-full border-gray-300 rounded">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high" selected>High</option>
+          </select>
+        </label>
+        <div class="mt-2">
+          <label><input type="checkbox" id="examplesIncluded" checked> Include Examples</label>
+        </div>
+      </div>
+
+      <!-- Language Settings -->
+      <div>
+        <h2 class="font-semibold mb-2">Language</h2>
+        <input type="text" id="languagePrimary" placeholder="Primary Language" value="da" class="w-full border-gray-300 rounded mb-2">
+        <input type="text" id="languageSecondary" placeholder="Secondary Language" value="en" class="w-full border-gray-300 rounded">
+      </div>
+
+      <!-- Interaction -->
+      <div>
+        <h2 class="font-semibold mb-2">Interaction</h2>
+        <div class="space-y-2">
+          <label><input type="checkbox" id="questionPriority" checked> Prioritize Questions</label>
+          <label><input type="checkbox" id="pauseBetweenTopics"> Pause Between Topics</label>
+          <label><input type="checkbox" id="encourageReflection" checked> Encourage Reflection</label>
+        </div>
+      </div>
+
+      <!-- Focus -->
+      <div>
+        <h2 class="font-semibold mb-2">Focus</h2>
+        <textarea id="focusTopics" rows="3" placeholder="Topics (comma-separated)" class="w-full border-gray-300 rounded">science, philosophy, technology, spirituality</textarea>
+        <textarea id="avoidTopics" rows="3" placeholder="Avoid Topics (comma-separated)" class="w-full border-gray-300 rounded mt-2">politics, sports</textarea>
+      </div>
+
+      <!-- Personalization -->
+      <div>
+        <h2 class="font-semibold mb-2">Personalization</h2>
+        <input type="text" id="nameUsage" placeholder="Name Usage" value="Nameless" class="w-full border-gray-300 rounded mb-2">
+        <div class="space-y-2">
+          <label><input type="checkbox" id="contextAwareness" checked> Context Awareness</label>
+          <label>
+            Preferred Examples:
+            <select id="preferredExamples" class="w-full border-gray-300 rounded">
+              <option value="real-world" selected>Real-World</option>
+              <option value="fictional">Fictional</option>
+              <option value="abstract">Abstract</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- Generate JSON -->
+      <button type="button" id="generateJson" class="w-full bg-blue-500 text-white py-2 rounded">
+        Generate JSON
+      </button>
+    </form>
+
+    <!-- Output Section -->
+    <div id="outputSection" class="mt-6 hidden">
+      <h2 class="text-lg font-bold mb-2">Generated JSON</h2>
+      <pre id="outputJson" class="bg-gray-200 p-4 rounded"></pre>
+      <button id="copyToClipboard" class="w-full bg-green-500 text-white py-2 mt-4 rounded">
+        Copy to Clipboard
+      </button>
+    </div>
+  </div>
+</body>
+</html>
+
+<script src="script.js"></script>    
+</body>
+</html>
